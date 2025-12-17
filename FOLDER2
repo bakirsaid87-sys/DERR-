@@ -1,0 +1,96 @@
+/* تصميم عام */
+body {
+    font-family: 'Playfair Display', serif;  /* خط أنيق عالي الموضة */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #000, #333);  /* خلفية سوداء متدرجة */
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* أقسام مخفية افتراضياً */
+.hidden {
+    display: none;
+}
+
+/* قسم العلامة التجارية */
+#brand-scene {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('background.jpg') no-repeat center/cover;  /* أضف خلفية غامرة */
+    animation: fadeIn 2s ease-in-out;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0 0 10px gold);  /* تأثير ذهبي */
+}
+
+h1 {
+    font-size: 3em;
+    color: gold;
+}
+
+/* قسم المنتجات */
+#products {
+    padding: 50px;
+    background: #111;
+}
+
+.product {
+    display: none;
+    transition: opacity 1s;
+}
+
+.product.active {
+    display: block;
+    opacity: 1;
+}
+
+.product img {
+    width: 300px;
+    height: auto;
+    border: 2px solid gold;
+    border-radius: 10px;
+}
+
+/* قسم التخصيص */
+#customize {
+    padding: 50px;
+    background: #222;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid gold;
+    background: #000;
+    color: #fff;
+}
+
+button {
+    background: gold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffd700;
+}
+
+/* تأثيرات انتقالية */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

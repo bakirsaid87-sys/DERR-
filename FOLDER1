@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">  <!-- دعم اللغة العربية -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>علامتي للملابس - High Fashion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- قسم العلامة التجارية (الانطلاقة الغامرة) -->
+    <section id="brand-scene" class="active">
+        <h1>مرحباً بعلامتي للملابس</h1>
+        <p>تصميم عالي الموضة، أناقة لا تنتهي.</p>
+        <img src="logo.png" alt="شعار العلامة" class="logo">  <!-- أضف شعارك هنا -->
+    </section>
+
+    <!-- قسم المنتجات (عرض واحد تلو الآخر تلقائياً) -->
+    <section id="products" class="hidden">
+        <h2>منتجاتنا</h2>
+        <div id="product-display">
+            <div class="product active">
+                <img src="shirt.jpg" alt="قميص">
+                <p>قميص أنيق - 100 دولار</p>
+            </div>
+            <div class="product">
+                <img src="pants.jpg" alt="بنطال">
+                <p>بنطال عصري - 150 دولار</p>
+            </div>
+            <div class="product">
+                <img src="dress.jpg" alt="فستان">
+                <p>فستان راقي - 200 دولار</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التخصيص (للإدارة) -->
+    <section id="customize" class="hidden">
+        <h2>لوحة التخصيص (للإدارة فقط)</h2>
+        <form id="custom-form">
+            <label>تحديث الشعار:</label>
+            <input type="file" id="logo-upload"><br>
+            <label>إضافة منتج جديد (رابط الصورة):</label>
+            <input type="text" id="new-product" placeholder="مثال: new-shirt.jpg"><br>
+            <button type="submit">حفظ التغييرات</button>
+        </form>
+        <p id="message"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

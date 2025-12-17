@@ -1,0 +1,39 @@
+// متغيرات عامة
+let currentPhase = 'brand';  // البداية بالعلامة التجارية
+const products = document.querySelectorAll('.product');
+let currentProductIndex = 0;
+
+// دالة للانتقال بين الأقسام
+function transitionToPhase(phase) {
+    document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
+    document.getElementById(phase).classList.remove('hidden');
+    currentPhase = phase;
+}
+
+// الانتقال التلقائي: العلامة → المنتجات (بعد 5 ثوانٍ)
+setTimeout(() => {
+    transitionToPhase('products');
+    showNextProduct();  // بدء عرض المنتجات
+}, 5000);
+
+// عرض المنتجات واحدة تلو الأخرى كل 3 ثوانٍ
+function showNextProduct() {
+    products.forEach(p => p.classList.remove('active'));
+    products[currentProductIndex].classList.add('active');
+    currentProductIndex = (currentProductIndex + 1) % products.length;
+    setTimeout(showNextProduct, 3000);  // تكرار كل 3 ثوانٍ
+}
+
+// الانتقال إلى قسم التخصيص (يمكن إضافة زر أو شرط)
+setTimeout(() => {
+    transitionToPhase('customize');
+}, 15000);  // بعد 15 ثانية للاختبار
+
+// معالجة نموذج التخصيص (بسيط، يحتاج backend لحفظ حقيقي)
+document.getElementById('custom-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const logoFile = document.getElementById('logo-upload').files[0];
+    const newProduct = document.getElementById('new-product').value;
+    // هنا يمكن إرسال البيانات إلى خادم (مثل fetch API)
+    document.getElementById('message').textContent = 'تم حفظ التغييرات! (في الواقع، أضف backend للحفظ)';
+});
